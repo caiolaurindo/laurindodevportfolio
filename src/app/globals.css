@@ -1,1 +1,23 @@
-/* Estilos globais serão definidos durante a construção do portfólio. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #fff;
+  color: #151515;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #1761f5;
+  color: #fff;
+}

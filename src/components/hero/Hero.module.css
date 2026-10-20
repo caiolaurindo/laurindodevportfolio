@@ -1,0 +1,117 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 110px 24px 68px;
+  background: #fff;
+  isolation: isolate;
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  top: 45%;
+  left: -49vw;
+  width: min(74vw, 1100px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 65% 55%, #f4f7ff 0%, #edf3ff 62%, #e9f0ff 100%);
+  content: "";
+}
+
+.name {
+  position: relative;
+  display: grid;
+  width: max-content;
+  max-width: 100%;
+  place-items: center;
+  --title-size: clamp(4.5rem, 13vw, 11rem);
+  --portrait-width: clamp(88px, 8vw, 112px);
+  --portrait-height: clamp(156px, 27vh, 188px);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: #1761f5;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--title-size);
+  font-weight: 900;
+  letter-spacing: -0.085em;
+  line-height: 0.78;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title span {
+  display: block;
+}
+
+.portraitWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: var(--portrait-width);
+  height: var(--portrait-height);
+  transform: translate(-50%, -55%);
+  overflow: hidden;
+  border: 2px solid #1761f5;
+  border-radius: 999px;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.tagline {
+  margin: clamp(76px, 12vh, 112px) 0 0;
+  color: #8d9bb5;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.82rem, 1.2vw, 1rem);
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+.tagline span {
+  color: #1761f5;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 120px 16px 52px;
+  }
+
+  .name {
+    --title-size: clamp(3.8rem, 17vw, 7rem);
+    --portrait-width: clamp(76px, 19vw, 90px);
+    --portrait-height: clamp(138px, 40vw, 154px);
+  }
+
+  .hero::before {
+    top: 47%;
+    left: -62vw;
+    width: 112vw;
+  }
+
+  .tagline {
+    max-width: 280px;
+    margin-top: 84px;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    scroll-behavior: auto;
+  }
+}
