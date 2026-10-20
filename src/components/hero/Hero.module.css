@@ -7,8 +7,9 @@
   justify-content: center;
   overflow: hidden;
   padding: 110px 24px 68px;
-  background: #fff;
+  background: var(--background);
   isolation: isolate;
+  transition: background-color 220ms ease;
 }
 
 .hero::before {
@@ -19,8 +20,14 @@
   width: min(74vw, 1100px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 65% 55%, #f4f7ff 0%, #edf3ff 62%, #e9f0ff 100%);
+  background: radial-gradient(
+    circle at 65% 55%,
+    var(--hero-glow) 0%,
+    var(--hero-glow-mid) 62%,
+    var(--hero-glow-edge) 100%
+  );
   content: "";
+  transition: background 220ms ease;
 }
 
 .name {
@@ -38,7 +45,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  color: #1761f5;
+  color: var(--accent);
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--title-size);
   font-weight: 900;
@@ -61,7 +68,7 @@
   height: var(--portrait-height);
   transform: translate(-50%, -55%);
   overflow: hidden;
-  border: 2px solid #1761f5;
+  border: 2px solid var(--accent);
   border-radius: 999px;
 }
 
@@ -75,7 +82,7 @@
 
 .tagline {
   margin: clamp(76px, 12vh, 112px) 0 0;
-  color: #8d9bb5;
+  color: var(--muted-foreground);
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(0.82rem, 1.2vw, 1rem);
   letter-spacing: -0.025em;
@@ -83,7 +90,7 @@
 }
 
 .tagline span {
-  color: #1761f5;
+  color: var(--accent);
 }
 
 @media (max-width: 600px) {
