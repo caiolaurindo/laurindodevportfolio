@@ -22,6 +22,8 @@
   --navbar-foreground: #1761f5;
   --navbar-foreground-hover: #0c4ad4;
   --navbar-logo-filter: brightness(0) saturate(100%) invert(29%) sepia(87%) saturate(3015%) hue-rotate(212deg) brightness(96%) contrast(97%);
+  --about-bg: #1761f5;
+  --about-bio-text: rgb(255 255 255 / 92%);
 }
 
 :root[data-theme="dark"] {
@@ -42,6 +44,8 @@
   --navbar-foreground: #f4f6fc;
   --navbar-foreground-hover: #fff;
   --navbar-logo-filter: none;
+  --about-bg: #1761f5;
+  --about-bio-text: rgb(255 255 255 / 92%);
 }
 
 html {

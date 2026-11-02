@@ -1,5 +1,7 @@
 .hero {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   min-height: 100svh;
   flex-direction: column;
@@ -10,6 +12,7 @@
   background: var(--background);
   isolation: isolate;
   transition: background-color 220ms ease;
+  will-change: transform;
 }
 
 .name {
