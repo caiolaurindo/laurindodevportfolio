@@ -1,0 +1,215 @@
+/* ==========================================================================
+   MINHA JORNADA — TIMELINE HORIZONTAL (ADAPTÁVEL AOS DOIS TEMAS)
+   ========================================================================== */
+
+.section {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  padding: 130px clamp(24px, 5vw, 64px) 150px;
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 220ms ease, color 220ms ease;
+  box-sizing: border-box;
+  overflow-x: clip;
+  isolation: isolate;
+  border-top: 1px solid var(--navbar-border);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título Empilhado: MINHA / JORNADA */
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--foreground);
+  text-transform: uppercase;
+  transition: color 220ms ease;
+}
+
+.blue {
+  color: #1761f5;
+}
+
+/* Linha do Tempo Horizontal Contínua */
+.timelineWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.trackLine {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #1761f5 0%,
+    rgb(23 97 245 / 80%) 50%,
+    rgb(23 97 245 / 30%) 85%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+:global([data-theme="dark"]) .trackLine {
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgb(255 255 255 / 75%) 50%,
+    rgb(255 255 255 / 25%) 85%,
+    transparent 100%
+  );
+}
+
+.timeline {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(20px, 2.8vw, 44px);
+  align-items: flex-start;
+}
+
+.timelineItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 36px;
+}
+
+/* Ponto / Nó sobre a Linha (Sem Brilho) */
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background: #1761f5;
+  border-radius: 50%;
+  box-shadow: none;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+:global([data-theme="dark"]) .dot {
+  background: #ffffff;
+}
+
+.timelineItem:hover .dot {
+  transform: scale(1.35);
+}
+
+/* Ano / Período */
+.year {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  color: #1761f5;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Organização / Título */
+.org {
+  margin: 0 0 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.1rem, 1.35vw, 1.3rem);
+  font-weight: 800;
+  color: var(--foreground);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  transition: color 220ms ease;
+}
+
+/* Subtítulo / Cargo */
+.role {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  line-height: 1.45;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 220ms ease;
+}
+
+/* Descrição Narrativa */
+.desc {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--foreground);
+  opacity: 0.78;
+  transition: color 220ms ease;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Telas menores / Tablets / Mobile)
+   ========================================================================== */
+
+@media (max-width: 1040px) {
+  .section {
+    padding: 80px 20px 90px;
+  }
+
+  .timelineWrapper {
+    margin-top: 48px;
+  }
+
+  .trackLine {
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(
+      to bottom,
+      #1761f5 0%,
+      rgb(23 97 245 / 40%) 80%,
+      transparent 100%
+    );
+  }
+
+  :global([data-theme="dark"]) .trackLine {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgb(255 255 255 / 35%) 80%,
+      transparent 100%
+    );
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .timelineItem {
+    padding-top: 0;
+    padding-left: 32px;
+  }
+
+  .dot {
+    top: 4px;
+    left: 0;
+  }
+}

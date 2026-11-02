@@ -1,0 +1,147 @@
+/* ==========================================================================
+   MINHAS SKILLS — FORMATO SIMPLES, COMPACTO E LIMPO
+   ========================================================================== */
+
+.section {
+  position: relative;
+  z-index: 45;
+  width: 100%;
+  padding: 90px clamp(24px, 5vw, 64px) 120px;
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 220ms ease, color 220ms ease;
+  box-sizing: border-box;
+  border-top: 1px solid var(--navbar-border);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 720px;
+}
+
+/* Título no mesmo padrão de Minha Jornada */
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--foreground);
+  text-transform: uppercase;
+  transition: color 220ms ease;
+}
+
+.blue {
+  color: #1761f5;
+}
+
+.subtitle {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+/* Grid com 3 Colunas Limpas */
+.groupsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  width: 100%;
+}
+
+.groupCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupTitle {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #1761f5;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--navbar-border);
+}
+
+.itemsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 160ms ease, transform 160ms ease;
+  user-select: none;
+}
+
+.skillItem:hover {
+  background: var(--navbar-background);
+  transform: translateX(4px);
+}
+
+.bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1761f5;
+  flex-shrink: 0;
+}
+
+:global([data-theme="dark"]) .bullet {
+  background: #ffffff;
+}
+
+.skillName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  transition: color 180ms ease;
+}
+
+.skillItem:hover .skillName {
+  color: #1761f5;
+}
+
+:global([data-theme="dark"]) .skillItem:hover .skillName {
+  color: #ffffff;
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 70px 20px 80px;
+  }
+
+  .groupsGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
