@@ -12,24 +12,6 @@
   transition: background-color 220ms ease;
 }
 
-.hero::before {
-  position: absolute;
-  z-index: -1;
-  top: 45%;
-  left: -49vw;
-  width: min(74vw, 1100px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 65% 55%,
-    var(--hero-glow) 0%,
-    var(--hero-glow-mid) 62%,
-    var(--hero-glow-edge) 100%
-  );
-  content: "";
-  transition: background 220ms ease;
-}
-
 .name {
   position: relative;
   display: grid;
@@ -102,12 +84,6 @@
     --title-size: clamp(3.8rem, 17vw, 7rem);
     --portrait-width: clamp(76px, 19vw, 90px);
     --portrait-height: clamp(138px, 40vw, 154px);
-  }
-
-  .hero::before {
-    top: 47%;
-    left: -62vw;
-    width: 112vw;
   }
 
   .tagline {

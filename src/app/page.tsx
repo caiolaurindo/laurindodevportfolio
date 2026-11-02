@@ -1,5 +1,6 @@
 import Navbar from "@/components/navegacao/Navbar";
 import Hero from "@/components/hero/Hero";
+import Projects from "@/components/projetos/Projects";
 import ThemeToggle from "@/components/tema/ThemeToggle";
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       <ThemeToggle />
       <main id="top">
         <Hero />
+        <Projects />
       </main>
     </>
   );

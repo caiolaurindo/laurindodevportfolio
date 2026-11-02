@@ -16,6 +16,12 @@
   --theme-button-background: #fff;
   --theme-button-foreground: #1761f5;
   --theme-button-border: rgb(23 97 245 / 24%);
+  --navbar-background: rgb(255 255 255 / 85%);
+  --navbar-border: rgb(23 97 245 / 24%);
+  --navbar-shadow: 0 8px 28px rgb(23 97 245 / 14%);
+  --navbar-foreground: #1761f5;
+  --navbar-foreground-hover: #0c4ad4;
+  --navbar-logo-filter: brightness(0) saturate(100%) invert(29%) sepia(87%) saturate(3015%) hue-rotate(212deg) brightness(96%) contrast(97%);
 }
 
 :root[data-theme="dark"] {
@@ -30,6 +36,12 @@
   --theme-button-background: #142451;
   --theme-button-foreground: #fff;
   --theme-button-border: rgb(255 255 255 / 44%);
+  --navbar-background: rgb(20 36 81 / 80%);
+  --navbar-border: rgb(255 255 255 / 28%);
+  --navbar-shadow: 0 8px 28px rgb(0 0 0 / 36%);
+  --navbar-foreground: #f4f6fc;
+  --navbar-foreground-hover: #fff;
+  --navbar-logo-filter: none;
 }
 
 html {
